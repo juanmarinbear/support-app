@@ -1,9 +1,6 @@
 myApp.controller('CreateCtrl', ['$scope', 'Parse', function($scope, Parse) {
 
   $scope.data = {};
-  $scope.submitted;
-
-  console.log(Parse);
 
   $scope.subject = [
     { label: 'Issue', value: 'issue' },
@@ -24,7 +21,22 @@ myApp.controller('CreateCtrl', ['$scope', 'Parse', function($scope, Parse) {
   ];
 
   $scope.submit = function() {
+    if($scope.createForm.$valid) {
+      $scope.loading = true;
+      var Ticket = Parse.Object.extend('Ticket');
+      var ticket = new Ticket($scope.data);
+      ticket.save(null, {
+        success: function(ticket) {
+          $scope.success = true;
+          $scope.loading = false;
+          $scope.$apply();
+        },
+        error: function(ticket, error) {
+          alert('Failed to create new object, with error code: ' + error.message);
+          $scope.loading = false;
+        }
+      });
+    }
     $scope.submitted = true;
-    console.log("Submit!");
   }
 }]);
