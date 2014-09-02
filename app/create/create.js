@@ -1,8 +1,9 @@
-myApp.controller('CreateCtrl', ['$scope', function($scope) {
+myApp.controller('CreateCtrl', ['$scope', 'Parse', function($scope, Parse) {
 
   $scope.data = {};
   $scope.submitted;
 
+  console.log(Parse);
 
   $scope.subject = [
     { label: 'Issue', value: 'issue' },
