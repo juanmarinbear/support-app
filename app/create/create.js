@@ -1,5 +1,8 @@
 myApp.controller('CreateCtrl', ['$scope', function($scope) {
+
   $scope.data = {};
+  $scope.submitted;
+
 
   $scope.subject = [
     { label: 'Issue', value: 'issue' },
@@ -20,6 +23,7 @@ myApp.controller('CreateCtrl', ['$scope', function($scope) {
   ];
 
   $scope.submit = function() {
+    $scope.submitted = true;
     console.log("Submit!");
   }
 }]);
