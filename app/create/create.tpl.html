@@ -25,13 +25,13 @@
     </div>
     <div class="pure-u-1 pure-u-md-1-4" data-ng-show="data.subject === 'issue' || data.subject === 'complaint'">
       <label for="service">Service</label>
-      <select id="service" name="service" data-ng-model="data.service" data-ng-options="option.value as option.label for option in service">
+      <select id="service" name="service" data-ng-model="data.service" data-ng-options="option.value as option.label for option in service" data-ng-required="data.subject === 'issue' || data.subject === 'complaint'">
         <option value="">-- Select --</option>
       </select>
     </div>
-    <div class="pure-u-1 pure-u-md-1-4">
+    <div class="pure-u-1 pure-u-md-1-4" data-ng-show="data.subject === 'issue'">
       <label for="issue">Issue</label>
-      <select id="issue" name="issue" data-ng-model="data.issue"  data-ng-options="option.value as option.label for option in issue">
+      <select id="issue" name="issue" data-ng-model="data.issue"  data-ng-options="option.value as option.label for option in issue" data-ng-required="data.subject === 'issue'">
         <option value="">-- Select --</option>
       </select>
     </div>
@@ -50,6 +50,8 @@
       <p data-ng-show="createForm.mobile.$error.required">Mobile is required.</p>
       <p data-ng-show="createForm.subject.$error.required">Subject is required.</p>
       <p data-ng-show="createForm.description.$error.required">Description is required.</p>
+      <p data-ng-show="createForm.service.$error.required">Service is required.</p>
+      <p data-ng-show="createForm.issue.$error.required">Issue is required.</p>
     </div>
     <div class=pure-u-1>
       <p>{{ data | json }}</p>
