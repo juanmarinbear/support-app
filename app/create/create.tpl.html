@@ -19,20 +19,20 @@
     </div>
     <div class="pure-u-1 pure-u-md-1-4">
       <label for="subject">Subject</label>
-      <select id="subject" name="subject" data-ng-model="data.subject">
-        <option>-- Select --</option>
+      <select id="subject" name="subject" data-ng-model="data.subject" data-ng-options="option.value as option.label for option in subject">
+        <option value="">-- Select --</option>
       </select>
     </div>
     <div class="pure-u-1 pure-u-md-1-4">
       <label for="service">Service</label>
-      <select id="service" name="service" data-ng-model="data.service">
-        <option>-- Select --</option>
+      <select id="service" name="service" data-ng-model="data.service" data-ng-options="option.value as option.label for option in service">
+        <option value="">-- Select --</option>
       </select>
     </div>
     <div class="pure-u-1 pure-u-md-1-4">
-      <label for="problem">Issue</label>
-      <select id="problem" name="problem" data-ng-model="data.issue">
-        <option>-- Select --</option>
+      <label for="issue">Issue</label>
+      <select id="issue" name="issue" data-ng-model="data.issue"  data-ng-options="option.value as option.label for option in issue">
+        <option value="">-- Select --</option>
       </select>
     </div>
     <div class="pure-u-1">
