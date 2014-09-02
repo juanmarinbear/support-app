@@ -1,3 +1,7 @@
 myApp.controller('CreateCtrl', ['$scope', function($scope) {
-  console.log('Hello from create!');
+  $scope.data = {};
+
+  $scope.submit = function() {
+    console.log("Submit!");
+  }
 }]);
