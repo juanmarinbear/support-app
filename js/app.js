@@ -7,11 +7,11 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
     .state('create', {
       url: "/create",
       controller: 'CreateCtrl',
-      templateUrl: "create/create.tpl.html"
+      templateUrl: "app/create/create.tpl.html"
     })
     .state('update', {
       url: "/update",
       controller: 'UpdateCtrl',
-      templateUrl: "update/update.tpl.html"
+      templateUrl: "app/update/update.tpl.html"
     });
 });
